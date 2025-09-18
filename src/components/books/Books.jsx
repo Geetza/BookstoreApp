@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { getBooks } from "../../services/booksService";
+import { getBooks, deleteBook } from "../../services/booksService";
 import BookRow from "../books/BookRow";
 import Spinner from "../Spinner";
 
@@ -16,6 +16,17 @@ const Books = () => {
       setBooks(data);
     } catch (err) {
       setError("We couldn't fetch the books right now. Please try again.");
+    }
+    setLoading(false);
+  };
+
+  const handleDelete = async (id) => {
+    setLoading(true);
+    try {
+      await deleteBook(id);
+      setBooks((books) => books.filter((book) => book.id !== id));
+    } catch (err) {
+      setError("Oops! We couldn't remove this book. Please try again.");
     }
     setLoading(false);
   };
@@ -46,18 +57,22 @@ const Books = () => {
               <th>Page Count</th>
               <th>Published Date</th>
               <th>ISBN</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
             {books.map((book) => (
               <BookRow
                 key={book.id}
+                id={book.id}
                 title={book.title}
                 author={book.author?.fullName}
                 publisher={book.publisher?.name}
                 pageCount={book.pageCount}
                 publishedDate={book.publishedDate}
                 isbn={book.isbn}
+                onDelete={() => handleDelete(book.id)}
+                //onEdit={() => handleEdit(book.id)}
               />
             ))}
           </tbody>

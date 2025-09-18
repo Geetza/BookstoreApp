@@ -1,0 +1,62 @@
+.btn-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.delete-btn {
+  width: 70px;
+  background-color: $dark-blue;
+  color: $white;
+  font-family: $font-family-base;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  box-shadow: $box-shadow;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: $error-red;
+    color: $dark-blue;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 49, 83, 0.3);
+  }
+}
+
+.edit-btn {
+  display: inline-block;
+  width: 70px;
+  background-color: $dark-blue;
+  color: $white;
+  font-family: $font-family-base;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: $box-shadow;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: $dirty-white;
+    color: $dark-blue;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 49, 83, 0.3);
+  }
+}
