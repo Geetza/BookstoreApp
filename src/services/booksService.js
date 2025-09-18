@@ -12,13 +12,13 @@ export async function getOneBook(id) {
   return response.data;
 }
 
-export async function createBook(publisher) {
-  const response = await AxiosConfig.post(RESOURCE, publisher);
+export async function createBook(book) {
+  const response = await AxiosConfig.post(RESOURCE, book);
   return response.data;
 }
 
-export async function updateBook(id, publisher) {
-  const response = await AxiosConfig.put(`${RESOURCE}/${id}`, publisher);
+export async function updateBook(id, book) {
+  const response = await AxiosConfig.put(`${RESOURCE}/${id}`, book);
   return response.data;
 }
 
