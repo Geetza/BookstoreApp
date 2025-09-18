@@ -1,0 +1,22 @@
+.header {
+  height: 60px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  box-shadow: $shadow-down;
+}
+
+.navbar {
+  display: flex;
+  gap: 1rem;
+  padding: 32px;
+
+  a {
+    text-decoration: none;
+    color: $text-dark;
+
+    &:hover {
+      color: $active-green;
+    }
+  }
+}
