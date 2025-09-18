@@ -1,0 +1,67 @@
+.book-form-container {
+  padding: 2rem;
+  background: $white;
+  border-radius: 1rem;
+  box-shadow: $box-shadow;
+  max-width: 600px;
+  margin: 2rem auto;
+  font-family: $font-family-base;
+
+  h2 {
+    color: $dark-blue;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+}
+
+.book-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+
+  label {
+    font-weight: 500;
+    color: $text-dark;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.3rem;
+  }
+
+  input,
+  select,
+  textarea {
+    padding: 0.6rem 0.8rem;
+    border: 1px solid $border-gray;
+    border-radius: 0.5rem;
+    font-family: $font-family-base;
+    font-size: 0.95rem;
+    width: 100%;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+    &:focus {
+      outline: none;
+      border-color: $dark-blue;
+      box-shadow: 0 0 0 3px rgba(0, 49, 83, 0.15);
+    }
+  }
+
+  .error-msg {
+    color: $error-red;
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+    height: 18px;
+    visibility: hidden;
+    color: $error-red;
+
+    &.show {
+      visibility: visible;
+    }
+  }
+
+  .form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+}

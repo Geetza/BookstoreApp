@@ -17,8 +17,8 @@ export async function createBook(book) {
   return response.data;
 }
 
-export async function updateBook(id, book) {
-  const response = await AxiosConfig.put(`${RESOURCE}/${id}`, book);
+export async function updateBook(book) {
+  const response = await AxiosConfig.put(`${RESOURCE}/${book.id}`, book);
   return response.data;
 }
 

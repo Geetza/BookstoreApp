@@ -7,10 +7,9 @@ import Spinner from "../Spinner";
 const Books = () => {
   const [books, setBooks] = useState([]);
   const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const loadBooks = async () => {
-    setLoading(true);
     try {
       const data = await getBooks();
       setBooks(data);
@@ -72,7 +71,6 @@ const Books = () => {
                 publishedDate={book.publishedDate}
                 isbn={book.isbn}
                 onDelete={() => handleDelete(book.id)}
-                //onEdit={() => handleEdit(book.id)}
               />
             ))}
           </tbody>

@@ -1,6 +1,7 @@
 .btn-container {
   display: flex;
   gap: 1rem;
+  justify-content: center;
 }
 
 .delete-btn {
@@ -19,6 +20,7 @@
   &:hover {
     background-color: $error-red;
     color: $dark-blue;
+    transform: scale(1.03);
   }
 
   &:active {
@@ -31,7 +33,7 @@
   }
 }
 
-.edit-btn {
+.normal-btn {
   display: inline-block;
   width: 70px;
   background-color: $dark-blue;
@@ -47,8 +49,9 @@
   transition: background-color 0.2s ease;
 
   &:hover {
-    background-color: $dirty-white;
+    background-color: $blueish-white-darker;
     color: $dark-blue;
+    transform: scale(1.03);
   }
 
   &:active {

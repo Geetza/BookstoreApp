@@ -22,7 +22,7 @@ const BookRow = ({
       <td>{isbn}</td>
       <td>
         <div className="btn-container">
-          <Link to={`/books/edit/${id}`} className="edit-btn">
+          <Link to={`/books/${id}/edit`} className="normal-btn">
             Edit
           </Link>
           <button className="delete-btn" onClick={onDelete}>

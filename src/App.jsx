@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Publishers from "./components/publishers/Publishers";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Books from "./components/Books/Books";
+import Books from "./components/books/Books";
 import BookForm from "./components/books/BookForm";
 
 const App = () => {
@@ -15,7 +15,8 @@ const App = () => {
         <Routes>
           <Route path="/publishers" element={<Publishers />} />
           <Route path="/books" element={<Books />} />
-          <Route path="/books/createABook" element={<BookForm />} />
+          <Route path="/books/add" element={<BookForm />} />
+          <Route path="/books/:id/edit" element={<BookForm />} />
         </Routes>
       </main>
       <Footer />
