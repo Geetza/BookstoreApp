@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { getPublishers } from "../services/publishersService";
+import { getPublishers } from "../../services/publishersService";
 import PublisherRow from "./PublisherRow";
+import Spinner from "../Spinner";
 
 const Publishers = () => {
   const [publishers, setPublishers] = useState([]);
@@ -22,13 +23,19 @@ const Publishers = () => {
     loadPublishers();
   }, []);
 
+  if (loading) {
+    return <Spinner />;
+  }
+
   return (
     <div>
       <div className="title-container">
-        <h1>Publishers:</h1>
+        <h1>Publishers</h1>
       </div>
-      <div className="error-container">{error}</div>
-      <div className="publishers-table-container">
+      <div className="error-container">
+        {error && <span className="error-span show">{error}</span>}
+      </div>
+      <div className="table-container">
         <table className="table">
           <thead>
             <tr>

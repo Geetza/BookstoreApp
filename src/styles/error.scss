@@ -1,0 +1,21 @@
+.error-span {
+  position: fixed; // stoji iznad sadržaja
+  top: 2rem;
+  right: 2rem;
+  background-color: $error-red; // koristi tvoju varijablu za grešku
+  color: $white;
+  padding: 0.8rem 1.2rem;
+  border-radius: 0.5rem;
+  box-shadow: $box-shadow; // koristi tvoju varijablu za shadow
+  font-weight: 600;
+  font-family: $font-family-base; // osnovni font
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+
+  &.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

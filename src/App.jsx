@@ -1,11 +1,11 @@
 import React from "react";
 import "./styles/main.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Publishers from "./components/Publishers";
+import Publishers from "./components/publishers/Publishers";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Books from "./components/Books";
-import BookForm from "./components/BookForm";
+import Books from "./components/books/Books";
+import BookForm from "./components/books/BookForm";
 
 const App = () => {
   return (
