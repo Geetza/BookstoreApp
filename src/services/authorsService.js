@@ -12,7 +12,7 @@ export async function getOneAuthor(id) {
   return response.data;
 }
 
-export async function createAuthor(book) {
+export async function createAuthor(author) {
   const response = await AxiosConfig.post(RESOURCE, author);
   return response.data;
 }

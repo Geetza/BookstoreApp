@@ -1,0 +1,15 @@
+.noContentMsg-container {
+  text-align: center;
+  padding: 3rem 1rem;
+  background-color: $dirty-white;
+  border: 1px dashed $border-gray;
+  border-radius: 8px;
+  box-shadow: $shadow-up;
+
+  .noContentMsg {
+    font-family: $font-family-base;
+    font-size: 32px;
+    color: $dark-blue;
+    font-style: italic;
+  }
+}

@@ -46,36 +46,40 @@ const Books = () => {
       <div className="error-container">
         {error && <span className="error-span show">{error}</span>}
       </div>
-      <div className="table-container">
-        <table className="table">
-          <thead>
-            <tr>
-              <th>Title</th>
-              <th>Author</th>
-              <th>Publisher</th>
-              <th>Page Count</th>
-              <th>Published Date</th>
-              <th>ISBN</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {books.map((book) => (
-              <BookRow
-                key={book.id}
-                id={book.id}
-                title={book.title}
-                author={book.author?.fullName}
-                publisher={book.publisher?.name}
-                pageCount={book.pageCount}
-                publishedDate={book.publishedDate}
-                isbn={book.isbn}
-                onDelete={() => handleDelete(book.id)}
-              />
-            ))}
-          </tbody>
-        </table>
-      </div>
+      {books && books.length > 0 ? (
+        <div className="table-container">
+          <table className="table">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Publisher</th>
+                <th>Published before:</th>
+                <th>ISBN</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {books.map((book) => (
+                <BookRow
+                  key={book.id}
+                  id={book.id}
+                  title={book.title}
+                  author={book.authorFullName}
+                  publisher={book.publisherName}
+                  publishedDate={book.yearsAfterPublished}
+                  isbn={book.isbn}
+                  onDelete={() => handleDelete(book.id)}
+                />
+              ))}
+            </tbody>
+          </table>
+        </div>
+      ) : (
+        <div className="noContentMsg-container">
+          <span className="noContentMsg show">No books to show</span>
+        </div>
+      )}
     </div>
   );
 };

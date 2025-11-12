@@ -140,6 +140,7 @@ const BookForm = () => {
           <select
             {...register("authorId", {
               required: "Author selection is required",
+              valueAsNumber: true,
             })}
           >
             <option value="">Select Author</option>
@@ -159,6 +160,7 @@ const BookForm = () => {
           <select
             {...register("publisherId", {
               required: "Publisher selection is required",
+              valueAsNumber: true,
             })}
           >
             <option value="">Select Publisher</option>
