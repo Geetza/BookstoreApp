@@ -8,6 +8,8 @@
 @import "form";
 @import "no-content-msg";
 @import "pagination";
+@import "sorting";
+@import "title";
 
 * {
   margin: 0;
@@ -26,10 +28,6 @@ body {
   color: $text-dark;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-h1 {
-  padding-left: 32px;
 }
 
 #root {

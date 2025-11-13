@@ -1,0 +1,18 @@
+.sorting-dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.sorting-dropdown select {
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.sorting-dropdown select:hover {
+  border-color: #007bff;
+}

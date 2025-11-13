@@ -7,6 +7,13 @@ export async function getPublishers() {
   return response.data;
 }
 
+export async function getSortedPublishers(sortBy, sortDirection) {
+  const response = await AxiosConfig.get(
+    `${RESOURCE}/sorted?sortBy=${sortBy}&sortDirection=${sortDirection}`
+  );
+  return response.data;
+}
+
 export async function getOnePublisher(id) {
   const response = await AxiosConfig.get(`${RESOURCE}/${id}`);
   return response.data;
