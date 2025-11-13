@@ -2,8 +2,10 @@ import AxiosConfig from "../axiosConfig";
 
 const RESOURCE = "/api/authors";
 
-export async function getAuthors() {
-  const response = await AxiosConfig.get(RESOURCE);
+export async function getAuthors(page, pageSize) {
+  const response = await AxiosConfig.get(
+    `${RESOURCE}?page=${page}&pageSize=${pageSize}`
+  );
   return response.data;
 }
 

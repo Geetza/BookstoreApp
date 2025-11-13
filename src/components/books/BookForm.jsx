@@ -23,9 +23,9 @@ const BookForm = () => {
     const loadData = async () => {
       setLoading(true);
       try {
-        const authorsData = await getAuthors();
+        const authorsData = await getAuthors(1, 30);
         const publishersData = await getPublishers();
-        setAuthors(authorsData);
+        setAuthors(authorsData.items);
         setPublishers(publishersData);
       } catch (err) {
         setError("We couldn't load authors or publishers. Please try again.");
